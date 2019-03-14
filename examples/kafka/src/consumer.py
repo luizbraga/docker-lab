@@ -11,8 +11,6 @@ consumer = KafkaConsumer(TOPIC_NAME,
                          bootstrap_servers=['localhost:9092'],
                          value_deserializer=lambda m: json.loads(m.decode('ascii')))
 
-import ipdb; ipdb.set_trace()
-
 for message in consumer:
     # message value and key are raw bytes -- decode if necessary!
     # e.g., for unicode: `message.value.decode('utf-8')`
